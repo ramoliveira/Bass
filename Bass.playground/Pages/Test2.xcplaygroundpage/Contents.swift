@@ -9,6 +9,6 @@ import Cocoa
 import PlaygroundSupport
 
 let controller = NSViewController()
-controller.view = SceneView(frame: NSRect(x: 0, y: 0, width: 800, height: 800)) //BassView(frame: NSRect(x: 0, y: 0, width: 800, height: 800))
+controller.view = SceneView(frame: NSRect(x: 0, y: 0, width: 680, height: 680)) //BassView(frame: NSRect(x: 0, y: 0, width: 800, height: 800))
 
 PlaygroundPage.current.liveView = controller.view
