@@ -11,6 +11,24 @@ public class Balloon: NSImageView {
         }
     }
     
+    private var _insideText: String = "" {
+        willSet {
+            if newValue.count == 0 {
+                return
+            }
+            self._insideText = newValue
+            self._txtField.stringValue = newValue
+        }
+    }
+    public var insideText: String {
+        get {
+            return self._insideText
+        }
+        set {
+            self._insideText = newValue
+        }
+    }
+    
     public override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
@@ -19,7 +37,7 @@ public class Balloon: NSImageView {
         }
         
         self.txtField.frame = NSRect(x: 0, y: 40, width: self.frame.width, height: self.frame.height/2)
-        self.txtField.stringValue = "Oi"
+        self.txtField.stringValue = "Test"
         self.txtField.backgroundColor = .clear
         self.txtField.textColor = .black
         self.txtField.alignment = .center
