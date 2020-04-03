@@ -1,26 +1,26 @@
 import Cocoa
 
-public class Balloon: NSImageView {
-    private var _txtField: NSTextField = NSTextField()
-    public var txtField: NSTextField {
+public class BalloonView: NSImageView {
+    private var _textView: NSTextView = NSTextView()
+    public var textView: NSTextView {
         get {
-            return self._txtField
+            return self._textView
         }
         set {
-            self._txtField = newValue
+            self._textView = newValue
         }
     }
     
-    private var _insideText: String = "" {
+    private var _insideText: NSString = "" {
         willSet {
-            if newValue.count == 0 {
+            if newValue.length == 0 {
                 return
             }
             self._insideText = newValue
-            self._txtField.stringValue = newValue
+            self._textView.string = newValue as! String
         }
     }
-    public var insideText: String {
+    public var insideText: NSString {
         get {
             return self._insideText
         }
@@ -36,17 +36,23 @@ public class Balloon: NSImageView {
             self.image = image
         }
         
-        self.txtField.frame = NSRect(x: 0, y: 40, width: self.frame.width, height: self.frame.height/2)
-        self.txtField.stringValue = "Test"
-        self.txtField.backgroundColor = .clear
-        self.txtField.textColor = .black
-        self.txtField.alignment = .center
-        self.txtField.isBezeled = false
-        self.txtField.isEditable = false
+        self.textView = NSTextView(frame: NSRect(x: 0, y: 40, width: self.frame.width, height: self.frame.height/2))
+        self.textView.string = "Oi"
+        self.textView.textColor = .black
+        self.textView.backgroundColor = .clear
         
-        self.txtField.font = NSFont(name: "Helvetica", size: 20)
+        if let fontURL = Bundle.main.url(forResource: "BalooThambi2-Regular", withExtension: "ttf") {
+            CTFontManagerRegisterFontsForURL(fontURL as CFURL, CTFontManagerScope.process, nil)
+        }
+    
+        if let font = NSFont(name: "Baloo Thambi 2 Regular", size: 24) {
+            self.textView.font = font
+        }
+        self.textView.alignment = .center
+        self.textView.isEditable = false
         
-        self.addSubview(self.txtField)
+        self.addSubview(self.textView)
+        
     }
     
     required init?(coder: NSCoder) {

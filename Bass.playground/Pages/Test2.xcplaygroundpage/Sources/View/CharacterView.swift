@@ -1,19 +1,30 @@
 import Cocoa
 
 public class CharacterView: NSView {
-    public var lines: [String]!
-    public var imageView: NSImageView!
+    private var _lines: [String]! {
+        willSet {
+            if newValue.count == 0 {
+                return
+            }
+            self._lines = newValue
+        }
+    }
+    public var lines: [String] {
+        get {
+            return self._lines
+        }
+        set {
+            self._lines = newValue
+        }
+    }
     
-//    public override init(frame frameRect: NSRect) {
-//        super.init(frame: frameRect)
-//
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    func speak(balloon: NSImageView, index: Int) {
-        
+    private var _imageView: NSImageView!
+    public var imageView: NSImageView {
+        get {
+            return self._imageView
+        }
+        set {
+            self._imageView = newValue
+        }
     }
 }
