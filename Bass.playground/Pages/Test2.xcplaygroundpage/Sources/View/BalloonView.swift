@@ -50,6 +50,7 @@ public class BalloonView: NSImageView {
         }
         self.textView.alignment = .center
         self.textView.isEditable = false
+        self.textView.isHidden = false
         
         self.addSubview(self.textView)
         

@@ -7,9 +7,6 @@ public protocol SceneCreatorProtocol: class {
     var balloonRect: NSRect { get }
     var balloon: BalloonView { get }
     
-    var backwardScene: SceneView? { get }
-    var fowardScene: SceneView? { get }
-    
     func create() -> SceneView
 }
 
@@ -34,18 +31,6 @@ extension SceneCreatorProtocol {
 }
 
 public class Scene1Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return nil
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene2Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -61,18 +46,6 @@ public class Scene1Creator: SceneCreatorProtocol {
 }
 
 public class Scene2Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene1Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene3Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -88,18 +61,6 @@ public class Scene2Creator: SceneCreatorProtocol {
 }
 
 public class Scene3Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene2Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene4Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -115,18 +76,6 @@ public class Scene3Creator: SceneCreatorProtocol {
 }
 
 public class Scene4Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene3Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene5Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -142,18 +91,6 @@ public class Scene4Creator: SceneCreatorProtocol {
 }
 
 public class Scene5Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene4Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene6Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -169,18 +106,6 @@ public class Scene5Creator: SceneCreatorProtocol {
 }
 
 public class Scene6Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene5Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene7Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -196,18 +121,6 @@ public class Scene6Creator: SceneCreatorProtocol {
 }
 
 public class Scene7Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene6Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene8Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -223,18 +136,6 @@ public class Scene7Creator: SceneCreatorProtocol {
 }
 
 public class Scene8Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene7Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene9Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -250,18 +151,6 @@ public class Scene8Creator: SceneCreatorProtocol {
 }
 
 public class Scene9Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene8Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene10Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -277,18 +166,6 @@ public class Scene9Creator: SceneCreatorProtocol {
 }
 
 public class Scene10Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene9Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene11Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -304,18 +181,6 @@ public class Scene10Creator: SceneCreatorProtocol {
 }
 
 public class Scene11Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene10Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return Scene12Creator().create()
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
@@ -331,18 +196,6 @@ public class Scene11Creator: SceneCreatorProtocol {
 }
 
 public class Scene12Creator: SceneCreatorProtocol {
-    public var backwardScene: SceneView? {
-        get {
-            return Scene4Creator().create()
-        }
-    }
-    
-    public var fowardScene: SceneView? {
-        get {
-            return nil
-        }
-    }
-    
     required public init() {}
     
     public func create() -> SceneView {
