@@ -1,6 +1,5 @@
 import Cocoa
 
-// Produ
 public protocol CharacterCreator {
     var characterRect: NSRect { get }
     

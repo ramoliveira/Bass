@@ -11,8 +11,8 @@ public class SceneView: NSView {
         }
     }
     
-    private var _balloon: NSImageView!
-    public var balloon: NSImageView {
+    private var _balloon: BalloonView!
+    public var balloon: BalloonView {
         get {
             return self._balloon
         }
@@ -21,26 +21,11 @@ public class SceneView: NSView {
         }
     }
     
-    private var _items: [NSImageView]!
-    public var items: [NSImageView] {
-        get {
-            return self._items
-        }
-        set {
-            self._items = newValue
-        }
-    }
-    
-    public var isBackwardButtonEnabled = false
-    
     public override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
         self.wantsLayer = true
         self.layer?.backgroundColor = CGColor(red: 0.95, green: 0.92, blue: 0.71, alpha: 1)
-        
-        let balloon = BalloonView(frame: NSRect(x: 200, y: 200, width: 300, height: 300))
-        self.addSubview(balloon)
     }
     
     required init?(coder: NSCoder) {

@@ -1,26 +1,10 @@
 import Cocoa
 
-public struct Views {
-    public static let views = [
-        Scene1Creator().create(),
-        Scene2Creator().create(),
-        Scene3Creator().create(),
-        Scene4Creator().create(),
-        Scene5Creator().create(),
-        Scene6Creator().create(),
-        Scene7Creator().create(),
-        Scene8Creator().create(),
-        Scene9Creator().create(),
-        Scene10Creator().create(),
-        Scene11Creator().create(),
-        Scene12Creator().create(),
-    ]
-}
-
 public struct ViewControllers {
     public static let controllers: [SceneViewController] = [
         {
-            let viewController = SceneViewController()
+//            let viewController = SceneViewController()
+            let viewController = Scene1ViewController()
             viewController.view = Views.views[0]
             viewController.name = "Scene1"
             viewController.index = 0
@@ -117,8 +101,3 @@ public struct ViewControllers {
         }()
     ]
 }
-
-func delay(seconds: TimeInterval, block: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: block)
-}
-

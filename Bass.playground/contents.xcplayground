@@ -2,6 +2,6 @@
 <playground version='6.0' target-platform='macos' display-mode='rendered'>
     <pages>
         <page name='Instructions'/>
-        <page name='Test2'/>
+        <page name='Scene'/>
     </pages>
 </playground>

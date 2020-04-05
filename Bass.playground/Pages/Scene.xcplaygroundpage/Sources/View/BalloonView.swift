@@ -12,12 +12,15 @@ public class BalloonView: NSImageView {
     }
     
     private var _insideText: NSString = "" {
+//        willSet {
+//            if newValue.length == 0 {
+//                return
+//            }
+//            self._insideText = newValue
+//            self._textView.string = newValue as! String
+//        }
         willSet {
-            if newValue.length == 0 {
-                return
-            }
-            self._insideText = newValue
-            self._textView.string = newValue as! String
+            self.removeTextAndAddText(text: newValue as! String)
         }
     }
     public var insideText: NSString {
@@ -58,5 +61,29 @@ public class BalloonView: NSImageView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addText(text: String) {
+        NSAnimationContext.runAnimationGroup { (context) in
+            context.duration = 1
+            self.textView.alphaValue = 1
+            self.textView.string = text
+        }
+    }
+    
+    func removeText() {
+        NSAnimationContext.runAnimationGroup { (context) in
+            context.duration = 1
+            self.textView.alphaValue = 0
+        }
+    }
+    
+    func removeTextAndAddText(text: String) {
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = 1
+            self.textView.alphaValue = 0
+        }) {
+            self.addText(text: text)
+        }
     }
 }

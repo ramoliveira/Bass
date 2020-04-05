@@ -13,13 +13,13 @@ public protocol SceneCreatorProtocol: class {
 extension SceneCreatorProtocol {
     public var sceneRect: NSRect {
         get {
-            return NSRect(x: 0, y: 0, width: 680, height: 680)
+            return NSRect(x: 0, y: 0, width: 800, height: 800)
         }
     }
     
     public var balloonRect: NSRect {
         get {
-            return NSRect(x: 200, y: 200, width: 300, height: 300)
+            return NSRect(x: 400, y: 200, width: 300, height: 300)
         }
     }
     
@@ -35,9 +35,11 @@ public class Scene1Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = false
         
         scene.character = Scene1CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        scene.balloon = self.balloon
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -50,9 +52,11 @@ public class Scene2Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene2CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        scene.balloon = self.balloon
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -65,9 +69,31 @@ public class Scene3Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene3CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        scene.balloon = self.balloon
+        
+        let height: CGFloat = 600
+        
+        let macbook = Items.macbook
+        macbook.frame.origin.x = 30
+        macbook.frame.origin.y = 555
+        let ipad = Items.ipad
+        ipad.frame.origin.x = self.sceneRect.width / 5 * 2
+        ipad.frame.origin.y = height
+        let iphone = Items.iphone
+        iphone.frame.origin.x = self.sceneRect.width / 5 * 3
+        iphone.frame.origin.y = height
+        let airpods = Items.airpods
+        airpods.frame.origin.x = self.sceneRect.width / 5 * 4
+        airpods.frame.origin.y = height
+        
+        scene.addSubview(macbook)
+        scene.addSubview(ipad)
+        scene.addSubview(iphone)
+        scene.addSubview(airpods)
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -80,9 +106,10 @@ public class Scene4Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene4CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -95,9 +122,10 @@ public class Scene5Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene5CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -110,9 +138,10 @@ public class Scene6Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene6CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -125,9 +154,10 @@ public class Scene7Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene7CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -140,9 +170,10 @@ public class Scene8Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene8CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -155,9 +186,10 @@ public class Scene9Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene9CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -170,9 +202,10 @@ public class Scene10Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene10CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -185,9 +218,10 @@ public class Scene11Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene11CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
@@ -200,9 +234,10 @@ public class Scene12Creator: SceneCreatorProtocol {
     
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
-        scene.isBackwardButtonEnabled = true
         
         scene.character = Scene12CharacterCreator().create()
+        scene.character.frame.origin.x = 200
+        
         scene.addSubview(scene.character)
         scene.addSubview(balloon)
         
