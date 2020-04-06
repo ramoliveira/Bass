@@ -2,11 +2,6 @@ import Cocoa
 
 public struct Items {
     public static let airpods = AirPodsView().create()
-//    public static let airpods = {
-//        let airpods = AirPodsView().create()
-//        airpods.alphaValue = 0
-//        return airpods
-//    }()
     
     public static let beef = BeefView().create()
     

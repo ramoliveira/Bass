@@ -4,6 +4,16 @@ public class SceneViewController: NSViewController {
     private(set) var fowardButton: NSButton!
     private(set) var backwardButton: NSButton!
     
+    // Balloon
+    internal let balloon = BalloonView(frame: NSRect(x: 400, y: 200, width: 300, height: 300))
+    
+    // TimeInterval's
+    internal let showBallonTimeInterval: TimeInterval = 2
+    internal let removeBallonTimeInterval: TimeInterval = 2
+    internal let showLineTimeInternaval: TimeInterval = 4
+    internal let removeLineTimeInterval: TimeInterval = 4
+    
+    // Public Attribute
     public var name: String = ""
     public var index: Int = 0
     
@@ -46,6 +56,81 @@ public class SceneViewController: NSViewController {
             self.view.addSubview(self.backwardButton)
         }
         self.view.addSubview(self.fowardButton)
+    }
+    
+    func showLine(index: Int, character: CharacterView) {
+        self.balloon.insideText = character.lines[index]
+        
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = self.showLineTimeInternaval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.textView.animator().isHidden = false
+        }) {
+            delay(seconds: 2) {
+                if index < character.lines.count-1 {
+                    self.removeLine(index: index, character: character)
+                } else {
+                    self.resetBalloon()
+                }
+            }
+        }
+    }
+    
+    func removeLine(index: Int, character: CharacterView) {
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = self.removeLineTimeInterval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.textView.animator().isHidden = true
+        }) {
+            self.showLine(index: index+1, character: character)
+        }
+    }
+    
+    func removeLine() {
+        NSAnimationContext.runAnimationGroup { (context) in
+            context.duration = self.removeLineTimeInterval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.textView.animator().isHidden = true
+        }
+    }
+    
+    func resetBalloon() {
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = self.removeBallonTimeInterval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.textView.animator().isHidden = true
+        }, completionHandler: nil)
+    }
+    
+    func showBalloon() {
+        NSAnimationContext.runAnimationGroup { (context) in
+            context.duration = self.showBallonTimeInterval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.animator().isHidden = false
+        }
+    }
+    
+    func showBalloon(completion: @escaping ()->Void) {
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = self.showBallonTimeInterval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.animator().isHidden = false
+        }, completionHandler: completion)
+    }
+    
+    func removeBalloon() {
+        NSAnimationContext.runAnimationGroup { (context) in
+            context.duration = self.removeBallonTimeInterval
+            context.allowsImplicitAnimation = true
+            
+            self.balloon.animator().isHidden = true
+        }
     }
 }
 

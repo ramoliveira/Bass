@@ -36,12 +36,12 @@ public class Scene1Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene1CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        scene.balloon = self.balloon
+//        scene.character = Characters.scene1
+//        scene.character.frame.origin.x = 200
+//        scene.balloon = self.balloon
         
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -53,12 +53,12 @@ public class Scene2Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene2CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        scene.balloon = self.balloon
+//        scene.character = Scene2CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//        scene.balloon = self.balloon
         
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -70,9 +70,9 @@ public class Scene3Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene3CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        scene.balloon = self.balloon
+//        scene.character = Scene3CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//        scene.balloon = self.balloon
         
         let height: CGFloat = 600
         
@@ -89,13 +89,13 @@ public class Scene3Creator: SceneCreatorProtocol {
         airpods.frame.origin.x = self.sceneRect.width / 5 * 4
         airpods.frame.origin.y = height
         
-        scene.addSubview(macbook)
-        scene.addSubview(ipad)
-        scene.addSubview(iphone)
-        scene.addSubview(airpods)
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.addSubview(macbook)
+//        scene.addSubview(ipad)
+//        scene.addSubview(iphone)
+//        scene.addSubview(airpods)
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -107,11 +107,11 @@ public class Scene4Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene4CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene4CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -123,11 +123,11 @@ public class Scene5Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene5CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene5CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -139,11 +139,11 @@ public class Scene6Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene6CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene6CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -155,11 +155,11 @@ public class Scene7Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene7CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene7CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -171,11 +171,11 @@ public class Scene8Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene8CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene8CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -187,11 +187,11 @@ public class Scene9Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene9CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene9CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -203,11 +203,11 @@ public class Scene10Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene10CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene10CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -219,11 +219,11 @@ public class Scene11Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene11CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene11CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
@@ -235,11 +235,11 @@ public class Scene12Creator: SceneCreatorProtocol {
     public func create() -> SceneView {
         let scene = SceneView(frame: sceneRect)
         
-        scene.character = Scene12CharacterCreator().create()
-        scene.character.frame.origin.x = 200
-        
-        scene.addSubview(scene.character)
-        scene.addSubview(balloon)
+//        scene.character = Scene12CharacterCreator().create()
+//        scene.character.frame.origin.x = 200
+//        
+//        scene.addSubview(scene.character)
+//        scene.addSubview(balloon)
         
         return scene
     }
