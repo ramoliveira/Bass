@@ -5,8 +5,8 @@
  
  ---
  
- ## What is bass?
+ ## What is Bass about?
  
- Bass is an experience that tries to make you look things differently.
+Bass is about how people can see things differently. I believe that I have this perk, so does many people. This is about me and the others. Bass is a experience that 
  
  */
